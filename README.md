@@ -1,5 +1,5 @@
 # Jumper
-Try to guess the secret word before the parachute break down.
+Try to guess the secret word before the parachute break down. Use letter A-Z and good luck!
 
 ---
 ## Getting Started
