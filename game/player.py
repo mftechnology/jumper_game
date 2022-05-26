@@ -21,6 +21,6 @@ class Player:
 
     def getletterplayer(self, guessedLetter):
         
-        self.letterinput = guessedLetter
+        self.letterinput = guessedLetter.lower()
         return self.letterinput
         
