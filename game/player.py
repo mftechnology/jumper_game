@@ -1,4 +1,7 @@
 
+from numpy import seterr
+
+
 class Player:
     """ A person who insert letter to the game. 
 
@@ -14,13 +17,15 @@ class Player:
         Args:
             self (Hider): An instance of Hider.
         """
-        self.letterinput =""
-
+        self._letterinput =""
+    
+   
     def get_letter(self):
-        return self.letterinput    
-
+        return self._letterinput    
+    
+  
     def getletterplayer(self, guessedLetter):
         
-        self.letterinput = guessedLetter.lower()
-        return self.letterinput
+        self._letterinput = guessedLetter.lower()
+        return self._letterinput
         
