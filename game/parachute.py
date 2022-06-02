@@ -1,12 +1,18 @@
 from game.terminal import Terminal
 
 class Parachute:
+    """
+    This class has the responsability to show parachute and remove character when the letter is wrong    
+    """
+        
 
     def __init__(self):
         """
-        To create a new Parachute.
-        Args:
-            self (Parachute): An instance of Parachute.
+        
+        Atributes:
+            self terminal a instance of Terminal Class
+            self is_out_of_line : store Boolean like a True when find the last move as string "x"
+            self parachute_list : a list to iniciate the parachute
         """
         self.terminal = Terminal()
         self.is_out_of_line = False
