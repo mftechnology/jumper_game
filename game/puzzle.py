@@ -1,5 +1,4 @@
 
-
 from game.terminal import Terminal
 import random
 
@@ -23,14 +22,31 @@ class Puzzle:
         Args:
             self (puzzle): An instance of puzzle.
         """
-        self._sorted_word = random.choice( ["argument","baseball","bathroom","chemical","business","birthday","champion","artistic","children","aircraft"])
+        #self._sorted_word = random.choice( ["argument","baseball","bathroom","chemical","business","birthday","champion","artistic","children","aircraft"])
+      
+        self._sorted_word = ["argument","baseball","bathroom","chemical","business","birthday","champion","artistic","children","aircraft"]
         self.letter_used = []
         self.character = []
         self.wrong_guesses = 0
         self.terminal = Terminal()
         self.name_found = False
         
-       
+
+    #Getter
+    @property
+    def _sorted_word(self):
+        
+        return self._secret_word
+    
+    #Setter
+    @_sorted_word.setter
+    def _sorted_word(self, list_word):
+        self._secret_word = random.choice(list_word )
+        
+        
+
+
+
     def isfound(self):
         """To verify if letter in secret word 
 
@@ -39,7 +55,7 @@ class Puzzle:
         """ 
         self.terminal.write_word("")
         
-        listword = list(self._sorted_word)
+        listword = list(self._secret_word)
         ind = 0 
 
         for i in listword:
@@ -63,7 +79,7 @@ class Puzzle:
         
         self.terminal.write_word("")
         
-        listword = list(self._sorted_word)
+        listword = list(self._secret_word)
         for i in listword:
             self.character.append("_")
            
@@ -79,7 +95,7 @@ class Puzzle:
 
         print(player)
        
-        if player not in self._sorted_word:
+        if player not in self._secret_word:
             self.wrong_guesses += 1
             parachute.removeparachute()
         
