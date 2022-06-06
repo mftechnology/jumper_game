@@ -1,4 +1,5 @@
 
+
 from game.terminal import Terminal
 import random
 
@@ -76,13 +77,13 @@ class Puzzle:
         """ 
         self.terminal.write_word("")
 
-        guessed_letter = player.get_letter()
+        print(player)
        
-        if guessed_letter not in self._sorted_word:
+        if player not in self._sorted_word:
             self.wrong_guesses += 1
             parachute.removeparachute()
         
-        self.letter_used.append(guessed_letter)
+        self.letter_used.append(player)
     
 
     def is_solved(self):

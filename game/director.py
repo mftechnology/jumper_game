@@ -26,7 +26,7 @@ class Director:
         self.is_playing = True
         self._puzzle = Puzzle()
         self.terminal = Terminal()
-        self.player = Player()
+        self.player = ("")
         self.parachute = Parachute()
      
         
@@ -87,7 +87,12 @@ class Director:
         """
         letter = self.terminal.read_input_text("\nGuess a letter [a-z]: ")
 
-        self.player.getletterplayer(letter)
+       # self.player.getletterplayer(letter)
+        letter = Player(letter)
+        self.player = letter._letterinput
+
+        return self.player
+        
         
     
     def make_updates(self):
